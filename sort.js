@@ -67,7 +67,7 @@ function swap(array, i, j) {
 
 // mergeSort(arr);
 
-let arr = [4,8,9,3,1,5,6];
+// let arr = [4,8,9,3,1,5,6];
 // function swap(array, i, j) {
 //   const tmp = array[i];
 //   array[i] = array[j];
@@ -102,4 +102,20 @@ function partition(array, start, end) {
   return j;
 }
 
-console.log(quickSort(arr));
+// console.log(quickSort(arr));
+
+let arr = [4,8,9,3,1,5,6];
+//Write an O(n) algorithm to sort an array of integers,
+//where you know in advance what the lowest and highest values are.
+
+function nsort (arr) {
+  let result = [];
+
+  for(let i = 0; i < arr.length; i++) {
+    result[arr[i]] = arr[i];
+  }
+
+  return result.filter(Boolean);
+}
+
+console.log(nsort(arr));
