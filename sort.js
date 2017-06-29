@@ -139,5 +139,5 @@ function sortBooks(array) {
   return mergeSort(array);
 }
 
-console.log(sortBooks(books));
-
+//console.log(sortBooks(books));
+Write an algorithm which searches through a 2D array, and whenever it finds a zero should set the entire row and column to zero.
