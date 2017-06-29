@@ -119,3 +119,13 @@ function nsort (arr) {
 }
 
 console.log(nsort(arr));
+
+function shuffle(array) {
+  for(let i=0; i<array.length; i++) {
+    let j = Math.floor(Math.random() * array.length);
+    swap(array, i, j);
+  }
+  return array;
+}
+
+console.log(shuffle(arr));
