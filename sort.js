@@ -19,42 +19,42 @@ function swap(array, i, j) {
 // }
 //
 // // console.log(bubbleSort(arr));
-// function mergeSort(array) {
-//   if(array.length <= 1) {
-//     return array;
-//   }
-//   const middle = Math.floor(array.length / 2);
-//   let left = array.slice(0,middle);
-//   let right = array.slice(middle);
-//
-//   left = mergeSort(left);
-//   right = mergeSort(right);
-//   temp = mergeSort(left);
-//
-//   return merge(left, right, array);
-// }
-//
-// function merge(left, right, array) {
-//   let leftIndex = 0;
-//   let rightIndex = 0;
-//   let resultIndex = 0;
-//   //This compares from each side
-//   while(leftIndex < left.length && rightIndex < right.length) {
-//     if(left[leftIndex] < right[rightIndex]) {
-//       array[resultIndex++] = left[leftIndex++];
-//     } else {
-//       array[resultIndex++] = right[rightIndex++];
-//     }
-//   }
-//   //Puts the values into the sorted array
-//   for(let i = leftIndex; i < left.length; i++) {
-//     array[resultIndex++] = left[i];
-//   }
-//   for(let i = rightIndex; i < right.length; i++) {
-//     array[resultIndex++] = right[i];
-//   }
-//   return array;
-// }
+function mergeSort(array) {
+  if(array.length <= 1) {
+    return array;
+  }
+  const middle = Math.floor(array.length / 2);
+  let left = array.slice(0,middle);
+  let right = array.slice(middle);
+
+  left = mergeSort(left);
+  right = mergeSort(right);
+  temp = mergeSort(left);
+
+  return merge(left, right, array);
+}
+
+function merge(left, right, array) {
+  let leftIndex = 0;
+  let rightIndex = 0;
+  let resultIndex = 0;
+  //This compares from each side
+  while(leftIndex < left.length && rightIndex < right.length) {
+    if(left[leftIndex] < right[rightIndex]) {
+      array[resultIndex++] = left[leftIndex++];
+    } else {
+      array[resultIndex++] = right[rightIndex++];
+    }
+  }
+  //Puts the values into the sorted array
+  for(let i = leftIndex; i < left.length; i++) {
+    array[resultIndex++] = left[i];
+  }
+  for(let i = rightIndex; i < right.length; i++) {
+    array[resultIndex++] = right[i];
+  }
+  return array;
+}
 //                [4,8,9,3] [1,5,6]
 //                [3, 4, 8, 9] [1, 5, 6]
 //                1,3,4,5,6,8,9
@@ -118,7 +118,7 @@ function nsort (arr) {
   return result.filter(Boolean);
 }
 
-console.log(nsort(arr));
+// console.log(nsort(arr));
 
 function shuffle(array) {
   for(let i=0; i<array.length; i++) {
@@ -128,4 +128,16 @@ function shuffle(array) {
   return array;
 }
 
-console.log(shuffle(arr));
+// console.log(shuffle(arr));
+
+//Imagine that I gave you twenty books to sort in alphabetical order.
+//How would you go about it? Can you express this as an algorithm?
+//Merge Sort
+const books = ['z','y','r','s','u','a','c','d','g'];
+function sortBooks(array) {
+  // return array.sort();
+  return mergeSort(array);
+}
+
+console.log(sortBooks(books));
+
