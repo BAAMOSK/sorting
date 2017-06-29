@@ -171,10 +171,24 @@ function makeZeros(arr) {
   }
   return arr;
 }
-let arr = [[4,8,9],[3,1,0],[6,1,2]];
+// let arr = [[4,8,9],[3,1,0],[6,1,2]];
 
-console.log(makeZeros(arr));
+// console.log(makeZeros(arr));
 
 // You are given an array containing positive and negative integers.
 // Write an algorithm which will find the largest sum in a
 // continuous sequence.
+
+function largestSum(arr) {
+  let result = arr[0] + arr[1];
+  for(let i = 1; i < arr.length-1; i++) {
+    let sum = arr[i] + arr[i+1];
+    if(sum > result) {
+      result = sum;
+    }
+  }
+  return result;
+}
+
+let arr = [1,3,-2,4,5,0,10];
+console.log(largestSum(arr));
